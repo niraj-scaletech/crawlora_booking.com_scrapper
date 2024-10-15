@@ -1,72 +1,149 @@
 [
   {
-      "type": "text",
-      "datatype": "string",
-      "placeholder": "Enter destination (e.g., Goa)",
-      "default": "Goa",
-      "label": "Destination",
-      "regex": "^.+$",
-      "required": true,
-      "name": "destination"
+    "type": "input",
+    "datatype": "string",
+    "placeholder": "Enter destination (e.g., Goa)",
+    "default": "Goa",
+    "label": "Destination",
+    "regex": "^.+$",
+    "required": true,
+    "name": "destination"
   },
   {
-      "type": "date",
-      "datatype": "string",
-      "placeholder": "YYYY-MM-DD",
-      "default": "2025-10-16",
-      "label": "Check-in Date",
-      "regex": "^\\d{4}-\\d{2}-\\d{2}$",
-      "required": true,
-      "name": "checkin"
+    "type": "input",
+    "datatype": "string",
+    "placeholder": "YYYY-MM-DD",
+    "default": "2025-10-16",
+    "label": "Check-in Date",
+    "regex": "^\\d{4}-\\d{2}-\\d{2}$",
+    "required": true,
+    "name": "checkin"
   },
   {
-      "type": "date",
-      "datatype": "string",
-      "placeholder": "YYYY-MM-DD",
-      "default": "2025-10-19",
-      "label": "Check-out Date",
-      "regex": "^\\d{4}-\\d{2}-\\d{2}$",
-      "required": true,
-      "name": "checkout"
+    "type": "input",
+    "datatype": "string",
+    "placeholder": "YYYY-MM-DD",
+    "default": "2025-10-19",
+    "label": "Check-out Date",
+    "regex": "^\\d{4}-\\d{2}-\\d{2}$",
+    "required": true,
+    "name": "checkout"
   },
   {
-      "type": "number",
-      "datatype": "integer",
-      "placeholder": "Number of adults",
-      "default": 2,
-      "label": "Adults",
-      "regex": "^\\d+$",
-      "required": true,
-      "name": "adults"
+    "type": "input",
+    "datatype": "number",
+    "placeholder": "Number of adults",
+    "default": 2,
+    "label": "Adults",
+    "regex": "^\\d+$",
+    "required": true,
+    "name": "adults"
   },
   {
-      "type": "number",
-      "datatype": "integer",
-      "placeholder": "Number of rooms",
-      "default": 2,
-      "label": "Rooms",
-      "regex": "^\\d+$",
-      "required": true,
-      "name": "rooms"
+    "type": "input",
+    "datatype": "number",
+    "placeholder": "Number of rooms",
+    "default": 2,
+    "label": "Rooms",
+    "regex": "^\\d+$",
+    "required": true,
+    "name": "rooms"
   },
   {
-      "type": "number",
-      "datatype": "integer",
-      "placeholder": "Number of children",
-      "default": 2,
-      "label": "Children",
-      "regex": "^\\d+$",
-      "required": false,
-      "name": "children"
+    "type": "input",
+    "datatype": "number",
+    "placeholder": "Number of children",
+    "default": 2,
+    "label": "Children",
+    "regex": "^\\d+$",
+    "required": false,
+    "name": "children"
   },
   {
-      "type": "array",
-      "datatype": "array",
-      "placeholder": "Enter child ages (comma-separated)",
-      "default": ["5", "6"],
-      "label": "Child Ages",
-      "regex": "^[0-9, ]*$",
-      "required": false,
-      "name": "childAges"
+    "type": "select",
+    "datatype": "array",
+    "placeholder": "Select child ages",
+    "default": [
+      5,
+      6
+    ],
+    "label": "Child Ages",
+    "regex": "^[0-9, ]*$",
+    "required": false,
+    "name": "childAges",
+    "options": [
+      {
+        "value": 0,
+        "label": "0 years old"
+      },
+      {
+        "value": 1,
+        "label": "1 year old"
+      },
+      {
+        "value": 2,
+        "label": "2 years old"
+      },
+      {
+        "value": 3,
+        "label": "3 years old"
+      },
+      {
+        "value": 4,
+        "label": "4 years old"
+      },
+      {
+        "value": 5,
+        "label": "5 years old"
+      },
+      {
+        "value": 6,
+        "label": "6 years old"
+      },
+      {
+        "value": 7,
+        "label": "7 years old"
+      },
+      {
+        "value": 8,
+        "label": "8 years old"
+      },
+      {
+        "value": 9,
+        "label": "9 years old"
+      },
+      {
+        "value": 10,
+        "label": "10 years old"
+      },
+      {
+        "value": 11,
+        "label": "11 years old"
+      },
+      {
+        "value": 12,
+        "label": "12 years old"
+      },
+      {
+        "value": 13,
+        "label": "13 years old"
+      },
+      {
+        "value": 14,
+        "label": "14 years old"
+      },
+      {
+        "value": 15,
+        "label": "15 years old"
+      },
+      {
+        "value": 16,
+        "label": "16 years old"
+      },
+      {
+        "value": 17,
+        "label": "17 years old"
+      }
+    ]
   }
 ]
