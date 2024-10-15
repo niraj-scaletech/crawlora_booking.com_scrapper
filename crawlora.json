@@ -16,5 +16,6 @@
     "short_description": "Get hotel data quickly",
     "version": "1.0.0",
     "documentation_file": "./documentation.md",
-    "input_file": "./input.json"
+    "input_file": "./input.json",
+    "app_id": "e5a002d0-e0d7-4acc-becf-b2c595c309fe"
 }
