@@ -2,8 +2,10 @@
   {
       "type": "textarea",
       "datatype": "string",
-      "placeholder": "https://www.booking.com/searchresults.en-gb.html?ss=Somnath%2C+Gujarat%2C+India&ssne=Goa&ssne_untouched=Goa&label=gen173bo-1DEg1mbGlnaHRzX2luZGV4KIICQgVpbmRleEgJWANobIgBAZgBCbgBGcgBDNgBA-gBAfgBBogCAZgCAqgCA7gC9YS4uAbAAgHSAiRkZmJlNDkyNS0wZDg1LTQ0YzQtYmM5ZS1iMjhkMDc5YTM5MTfYAgTgAgE&sid=e115526b6211f0a1523cfe2f127cb52d&aid=304142&lang=en-gb&sb=1&src_elem=sb&src=index&dest_id=-2111788&dest_type=city&ac_position=1&ac_click_type=b&ac_langcode=en&ac_suggestion_list_length=5&search_selected=true&search_pageview_id=ab30290141720192&ac_meta=GhBhYjMwMjkwMTQxNzIwMTkyIAEoATICZW46A3NvbUAASgBQAA%3D%3D&checkin=2024-10-16&checkout=2024-10-19&group_adults=2&no_rooms=1&group_children=0",
+      "placeholder": "Enter one or more listing page URLs from Booking.com (one URL per line)\n\nExample:\nhttps://www.booking.com/searchresults.en-gb.html?ss=New+York\nhttps://www.booking.com/searchresults.en-gb.html?ss=Paris",
+      "default": "https://www.booking.com/searchresults.en-gb.html?ss=Somnath%2C+Gujarat%2C+India&ssne=Goa&ssne_untouched=Goa&label=gen173bo-1DEg1mbGlnaHRzX2luZGV4KIICQgVpbmRleEgJWANobIgBAZgBCbgBGcgBDNgBA-gBAfgBBogCAZgCAqgCA7gC9YS4uAbAAgHSAiRkZmJlNDkyNS0wZDg1LTQ0YzQtYmM5ZS1iMjhkMDc5YTM5MTfYAgTgAgE&sid=e115526b6211f0a1523cfe2f127cb52d&aid=304142&lang=en-gb&sb=1&src_elem=sb&src=index&dest_id=-2111788&dest_type=city&ac_position=1&ac_click_type=b&ac_langcode=en&ac_suggestion_list_length=5&search_selected=true&search_pageview_id=ab30290141720192&ac_meta=GhBhYjMwMjkwMTQxNzIwMTkyIAEoATICZW46A3NvbUAASgBQAA%3D%3D&checkin=2024-10-16&checkout=2024-10-19&group_adults=2&no_rooms=1&group_children=0",
       "label": "Listing page URLs",
+      "regex": "/^.*$/",
       "required": true,
       "name": "listingUrls"
   }
