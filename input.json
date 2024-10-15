@@ -1,12 +1,72 @@
 [
-    {
-        "type": "textarea",
-        "datatype": "string",
-        "placeholder": "Enter search keywords per line",
-        "default": "crawlora",
-        "label": "Google searchs",
-        "regex": "/^.*$/",
-        "required": true,
-        "name": "searches"
-      }
+  {
+      "type": "text",
+      "datatype": "string",
+      "placeholder": "Enter destination (e.g., Goa)",
+      "default": "Goa",
+      "label": "Destination",
+      "regex": "^.+$",
+      "required": true,
+      "name": "destination"
+  },
+  {
+      "type": "date",
+      "datatype": "string",
+      "placeholder": "YYYY-MM-DD",
+      "default": "2025-10-16",
+      "label": "Check-in Date",
+      "regex": "^\\d{4}-\\d{2}-\\d{2}$",
+      "required": true,
+      "name": "checkin"
+  },
+  {
+      "type": "date",
+      "datatype": "string",
+      "placeholder": "YYYY-MM-DD",
+      "default": "2025-10-19",
+      "label": "Check-out Date",
+      "regex": "^\\d{4}-\\d{2}-\\d{2}$",
+      "required": true,
+      "name": "checkout"
+  },
+  {
+      "type": "number",
+      "datatype": "integer",
+      "placeholder": "Number of adults",
+      "default": 2,
+      "label": "Adults",
+      "regex": "^\\d+$",
+      "required": true,
+      "name": "adults"
+  },
+  {
+      "type": "number",
+      "datatype": "integer",
+      "placeholder": "Number of rooms",
+      "default": 2,
+      "label": "Rooms",
+      "regex": "^\\d+$",
+      "required": true,
+      "name": "rooms"
+  },
+  {
+      "type": "number",
+      "datatype": "integer",
+      "placeholder": "Number of children",
+      "default": 2,
+      "label": "Children",
+      "regex": "^\\d+$",
+      "required": false,
+      "name": "children"
+  },
+  {
+      "type": "array",
+      "datatype": "array",
+      "placeholder": "Enter child ages (comma-separated)",
+      "default": ["5", "6"],
+      "label": "Child Ages",
+      "regex": "^[0-9, ]*$",
+      "required": false,
+      "name": "childAges"
+  }
 ]
