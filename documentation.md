@@ -25,12 +25,10 @@ The **Booking.com Hotel Scraper** is an automated tool for extracting hotel data
 ---
 ## Input Parameters
 
-- **Destination**: City or place to search hotels for (e.g., *Paris*).  
-- **Check-in / Check-out Dates**: The dates of stay.  
-- **Adults**: Number of adult guests.  
-- **Rooms**: Total rooms required.  
-- **Children**: Number of children (optional).  
-- **Child Ages**: Ages of children, if applicable.  
+- **Listing Page URLs**:  
+  A textarea input for entering one or more listing page URLs from Booking.com. This field is required.  
+  *Example*:  
+  `https://www.booking.com/searchresults.en-gb.html?ss=Somnath%2C+Gujarat%2C+India&ssne=Goa&ssne_untouched=Goa&label=gen173bo-1DEg1mbGlnaHRzX2luZGV4KIICQgVpbmRleEgJWANobIgBAZgBCbgBGcgBDNgBA-gBAfgBBogCAZgCAqgCA7gC9YS4uAbAAgHSAiRkZmJlNDkyNS0wZDg1LTQ0YzQtYmM5ZS1iMjhkMDc5YTM5MTfYAgTgAgE&sid=e115526b6211f0a1523cfe2f127cb52d&aid=304142&lang=en-gb&sb=1&src_elem=sb&src=index&dest_id=-2111788&dest_type=city&ac_position=1&ac_click_type=b&ac_langcode=en&ac_suggestion_list_length=5&search_selected=true&search_pageview_id=ab30290141720192&ac_meta=GhBhYjMwMjkwMTQxNzIwMTkyIAEoATICZW46A3NvbUAASgBQAA%3D%3D&checkin=2024-10-16&checkout=2024-10-19&group_adults=2&no_rooms=1&group_children=0`
 
 ---
 
@@ -38,9 +36,8 @@ The **Booking.com Hotel Scraper** is an automated tool for extracting hotel data
 
 1. **Step 1**: Click `Try it!`
 2. **Step 2**: Enter the required information:
-   - **Destination**: Enter your destination city (e.g., *New York*).
-   - **Check-in / Check-out Dates**: Provide the dates.
-   - **Guests & Rooms**: Specify the number of adults, children, and rooms.
+   - **Listing Page URLs**: Enter one or more listing page URLs from Booking.com . 
+   Each URL should be on a new line
 3. **Step 3**: Click the `Submit` button to run the task and extract hotel data.
 
 ## Sample Data Preview

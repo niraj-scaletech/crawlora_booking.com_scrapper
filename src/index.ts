@@ -2,48 +2,41 @@ import { apikey, sequence_id, showBrowser } from "./config";
 import { browser } from "@crawlora/browser";
 
 export default async function ({
-  destination,
-  checkin,
-  checkout,
-  adults,
-  rooms,
-  children,
-  childAges
-}: {
-  destination: string,
-  checkin: string,
-  checkout: string,
-  adults: number,
-  rooms: number,
-  children?: number,
-  childAges?: string[]
-}) {
+  listingUrls }: {
+    listingUrls: string
+  }) {
+  const formedData = listingUrls.trim()
+    .split("\n")
+    .map((v) => v.trim());
+
   await browser(async ({ page, wait, output, debug }) => {
     try {
-      const url = buildBookingUrl({ destination, checkin, checkout, adults, rooms, children, childAges });
+      for await (const url of formedData) {
+        debug(`Navigating to: ${url}`);
+        await page.goto(url, { waitUntil: 'networkidle2' });
 
-      debug(`Navigating to: ${url}`);
-      await page.goto(url, { waitUntil: 'networkidle2' });
+        // handle popup
+        try {
+          await page.waitForSelector('.c0528ecc22', { timeout: 5000 });
+          await page.keyboard.press('Escape');
+        } catch (error) {
+          debug('Popup did not appear, continuing without pressing Escape.');
+        }
 
-      // handle popup
-      try {
-        await page.waitForSelector('.c0528ecc22', { timeout: 5000 });
-        await page.keyboard.press('Escape');
-      } catch (error) {
-        debug('Popup did not appear, continuing without pressing Escape.');
+        debug("Loading all search results...");
+        await loadAllResults(page, wait, debug);
+        debug("Data loaded. Extracting hotel data...");
+
+        // Extract hotel data
+        const hotelData = await page.evaluate(extractHotelData);
+
+        //submit hotel data
+        await submitHotelData(hotelData, output, debug);
+
+        await wait(5)
       }
 
-      debug("Loading all search results...");
-      await loadAllResults(page, wait, debug);
-      debug("Data loaded. Extracting hotel data...");
-
-      // Extract hotel data
-      const hotelData = await page.evaluate(extractHotelData);
-
-      await submitHotelData(hotelData, output, debug);
-
       debug("Data submitted successfully.");
-      await wait(5)
     } catch (error) {
       debug(`Error encountered: ${(error as Error).message}`);
       throw error;
@@ -52,12 +45,6 @@ export default async function ({
 
 }
 
-
-export function buildBookingUrl({ destination, checkin, checkout, adults, rooms, children, childAges }: { destination: string, checkin: string, checkout: string, adults: number, rooms: number, children?: number, childAges?: string[] }): string {
-  const childAgesQuery = childAges?.map(age => `&age=${age}`).join('');
-
-  return `https://www.booking.com/searchresults.en-gb.html?ss=${encodeURIComponent(destination)}&checkin=${checkin}&checkout=${checkout}&group_adults=${adults}&group_children=${children}${childAgesQuery}&no_rooms=${rooms}&lang=en-gb&src=index`;
-}
 
 // Function to load all results by handling both scrolling and "Load More" button
 async function loadAllResults(page: any, wait: any, debug: debug.Debugger) {
